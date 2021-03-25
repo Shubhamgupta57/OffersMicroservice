@@ -1,0 +1,16 @@
+services:
+  offersmicroservice:
+    build:
+      context: C:\Users\imshu\Desktop\Offer\OffersMicroservice
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: offersmicroservice
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\imshu\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\imshu\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
